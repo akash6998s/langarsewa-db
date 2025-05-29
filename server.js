@@ -11,10 +11,15 @@ const summaryRoutes = require('./routes/summary');
 const signupRoutes = require('./routes/signup'); // Correctly importing the signup router
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://langarprasadsewa.netlify.app',
+  credentials: true
+}));
+
 app.use(bodyParser.json());
 
 // Serve static images
