@@ -1,0 +1,103 @@
+📘 Langar Sewa Attendance API Reference
+
+---
+
+✅ GET /api/attendance  
+Description: Get all attendance records  
+Payload: None  
+Response:
+[
+  {
+    "name": "Ravi Kumar",
+    "roll": "1",
+    "attendance": {
+      "2025": {
+        "january": [1, 10, 23],
+        "march": [1, 2]
+      }
+    }
+  }
+]
+
+---
+
+✅ POST /api/attendance/update  
+Description: Add attendance for multiple members on a specific date  
+Payload:
+{
+  "year": "2025",
+  "month": "may",
+  "date": 29,
+  "roll_numbers": [1, 2, 3]
+}  
+Response:
+{
+  "message": "Attendance updated successfully",
+  "updatedRolls": [1, 2, 3]
+}
+
+---
+
+✅ POST /api/attendance/delete  
+Description: Remove attendance for multiple members on a specific date  
+Payload:
+{
+  "year": "2025",
+  "month": "may",
+  "date": 29,
+  "roll_numbers": [1, 3]
+}  
+Response:
+{
+  "message": "Attendance deleted successfully",
+  "deletedRolls": [1, 3]
+}
+
+---
+
+✅ GET /api/attendance/:roll  
+Description: Get attendance of one person by roll number  
+Example: GET /api/attendance/2  
+Response:
+{
+  "roll": "2",
+  "name": "Sita Sharma",
+  "attendance": {
+    "2025": {
+      "january": [1, 3, 4, 6],
+      "march": [2]
+    }
+  }
+}
+
+---
+
+✅ POST /api/attendance/summary  
+Description: Get monthly or yearly attendance summary for all  
+Payload (monthly):
+{
+  "year": "2025",
+  "month": "march"
+}
+
+Payload (yearly):
+{
+  "year": "2025"
+}
+
+Response:
+{
+  "summaryType": "Monthly Summary for march 2025",
+  "summary": [
+    {
+      "roll": "1",
+      "name": "Ravi Kumar",
+      "days_present": 3
+    },
+    {
+      "roll": "2",
+      "name": "Sita Sharma",
+      "days_present": 2
+    }
+  ]
+}
