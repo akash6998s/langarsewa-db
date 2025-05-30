@@ -4,5 +4,23 @@
     "email": "akash6998s@gmail.com",
     "password": "akash123",
     "status": "approved"
+  },
+  {
+    "rollNumber": "3",
+    "email": "v@gmail.com",
+    "password": "v123",
+    "status": "pending"
+  },
+  {
+    "rollNumber": "7",
+    "email": "v465@gmail.com",
+    "password": "12345",
+    "status": "pending"
+  },
+  {
+    "rollNumber": "1",
+    "email": "iuhji@gmail.com",
+    "password": "ujh",
+    "status": "pending"
   }
 ]

@@ -11,7 +11,7 @@ const {
 
 router.get('/', getAllDonations);
 router.post('/', addDonation); // Use POST for adding donations
-router.delete('/', deductDonation); // Use DELETE for deducting donations
+router.post('/deduct-donation', deductDonation); // Use DELETE for deducting donations
 router.get('/total', getTotalDonations); // Get total for all members
 router.get('/summary/:roll_no', getSingleMemberDonationSummary); // Get summary for a single member by roll_no
 

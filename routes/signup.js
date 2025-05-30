@@ -20,12 +20,19 @@ router.post("/", (req, res) => {
 
   const users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
 
-  const userExists = users.find((user) => user.rollNumber === rollNumber);
-  if (userExists) {
+  const rollNumberExists = users.find((user) => user.rollNumber === rollNumber);
+  if (rollNumberExists) {
     return res
       .status(409)
       .json({ message: "User already exists with this roll number." });
-  } // Default status is pending
+  }
+
+  const emailExists = users.find((user) => user.email === email);
+  if (emailExists) {
+    return res
+      .status(409)
+      .json({ message: "User already exists with this email address." });
+  }
 
   const newUser = { rollNumber, email, password, status: "pending" };
   users.push(newUser);
@@ -35,6 +42,7 @@ router.post("/", (req, res) => {
     message: "Request sent. Please wait until the admin approves your account",
   });
 });
+
 
 // POST route for login
 router.post("/login", (req, res) => {
@@ -60,8 +68,12 @@ router.post("/login", (req, res) => {
     });
   }
 
-  res.status(200).json({ message: "Login successful.", user });
+  res.status(200).json({ 
+    message: "Login successful.", 
+    rollNumber: user.rollNumber 
+  });
 });
+
 
 // POST route to update user status or delete user
 router.post("/update-status", (req, res) => {

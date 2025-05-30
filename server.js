@@ -15,10 +15,23 @@ const PORT = process.env.PORT || 5000;
 
 
 // Middleware
+const allowedOrigins = [
+  'https://langarprasadsewa.netlify.app',
+  'http://localhost:5173',
+];
+
 app.use(cors({
-  origin: 'https://langarprasadsewa.netlify.app',
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps or curl requests)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
+
 
 app.use(bodyParser.json());
 
