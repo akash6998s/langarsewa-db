@@ -4,9 +4,11 @@
     "name": "Deepak",
     "last_name": "Pathak",
     "phone_no": "9818121311",
-    "address": "Sector -30, Faridabad ",
+    "address": "Sector -30, Faridabad",
     "img": "1.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 2,
@@ -15,7 +17,9 @@
     "phone_no": "8860801938",
     "address": "Faridabad ",
     "img": "2.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 3,
@@ -24,7 +28,9 @@
     "phone_no": "8010853551",
     "address": "Ghaziabad ",
     "img": "3.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 4,
@@ -33,7 +39,9 @@
     "phone_no": "7042520201",
     "address": "Faridabad ",
     "img": "4.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 5,
@@ -42,7 +50,9 @@
     "phone_no": "8744000938",
     "address": "Samay pur road, Rajiv colony, Sector 56-A, ballabgarh, Faridabad - 121004",
     "img": "5.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 6,
@@ -51,7 +61,9 @@
     "phone_no": "7827733423",
     "address": "Malook chand estate mata ka mandir Mewla maharajpur sec-46  ",
     "img": "6.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 7,
@@ -59,7 +71,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 8,
@@ -68,7 +82,9 @@
     "phone_no": "9315729158",
     "address": "Ghaziabad",
     "img": "8.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 9,
@@ -76,7 +92,9 @@
     "last_name": "Nagar",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 10,
@@ -85,7 +103,9 @@
     "phone_no": "9013495745",
     "address": "A-302 Gaur Global Village,crossings republic,Nh-24,Ghaziabad(U.P)201016",
     "img": "10.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 11,
@@ -93,7 +113,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 12,
@@ -102,7 +124,9 @@
     "phone_no": "8168283293",
     "address": "Near Sarv Haryana Gramin bank teh.hathin distt.palwal",
     "img": "12.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 13,
@@ -111,7 +135,9 @@
     "phone_no": "9456634666",
     "address": "Gali no 2, Sharma market pul pahladpur, new delhi 110044",
     "img": "13.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 14,
@@ -119,7 +145,9 @@
     "last_name": "Gurgaon",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 15,
@@ -128,7 +156,9 @@
     "phone_no": "7701873073",
     "address": "h.no 329, gali no. 2, Setpur bhatta colony, sector 91, faridabad",
     "img": "15.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 16,
@@ -137,7 +167,9 @@
     "phone_no": "9719344739",
     "address": "Kosi kalan",
     "img": "16.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 17,
@@ -145,7 +177,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 18,
@@ -154,7 +188,9 @@
     "phone_no": "7011557728",
     "address": "F-324 SGM Nagar Faridabad ",
     "img": "18.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 19,
@@ -162,7 +198,9 @@
     "last_name": "Baba",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 20,
@@ -170,7 +208,9 @@
     "last_name": "Prasad",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 21,
@@ -179,7 +219,9 @@
     "phone_no": "9412145054",
     "address": "Gali no 2 Sharma market pul pahladpur new delhi 110044",
     "img": "21.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 22,
@@ -187,7 +229,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 23,
@@ -196,7 +240,9 @@
     "phone_no": "9773687712",
     "address": "H no. 3146, gali no. 72, e-2 block, modband, delhi",
     "img": "23.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 24,
@@ -204,7 +250,9 @@
     "last_name": "Sherpur",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 25,
@@ -212,7 +260,9 @@
     "last_name": "Yadav",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 26,
@@ -220,7 +270,9 @@
     "last_name": "Yadav",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 27,
@@ -228,7 +280,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 28,
@@ -236,7 +290,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": "29",
@@ -245,7 +301,9 @@
     "phone_no": "9306660561",
     "address": "Nearby All India Ayurveda hospital, badarpur - 440074",
     "img": "29.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 30,
@@ -254,7 +312,9 @@
     "phone_no": "8307462918",
     "address": " H.no.1028, Sector 46, Faridabad, Haryana, 121010",
     "img": "30.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 31,
@@ -262,7 +322,9 @@
     "last_name": "Ballabgarh",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 32,
@@ -271,7 +333,9 @@
     "phone_no": "9911943363",
     "address": "Near Bhawani Mandir VPO Tigaon Distt faridabad",
     "img": "32.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 33,
@@ -279,7 +343,9 @@
     "last_name": "Kumar",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 34,
@@ -287,7 +353,9 @@
     "last_name": "Mewla",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 35,
@@ -296,7 +364,9 @@
     "phone_no": "9717310934",
     "address": "h.no 329, gali no. 2, Setpur bhatta colony, sector 91, faridabad",
     "img": "35.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 36,
@@ -304,7 +374,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 37,
@@ -312,7 +384,9 @@
     "last_name": "Palla",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 38,
@@ -320,7 +394,9 @@
     "last_name": "Sgm",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 39,
@@ -328,7 +404,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 40,
@@ -337,7 +415,9 @@
     "phone_no": "9718895998",
     "address": "HR 29 B/7 Pul pahladpur, NEW Delhi -110044",
     "img": "40.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 41,
@@ -345,7 +425,9 @@
     "last_name": "Atom",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": "42",
@@ -354,7 +436,9 @@
     "phone_no": "9193391915",
     "address": "Koda Shamshabad post Aurangabad bulandshahar",
     "img": "42.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 43,
@@ -362,7 +446,9 @@
     "last_name": "Palwal",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 44,
@@ -371,7 +457,9 @@
     "phone_no": "8392915517",
     "address": "New Shiv. Mandir hajipur bulandshahar",
     "img": "44.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 45,
@@ -379,7 +467,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 46,
@@ -387,7 +477,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 47,
@@ -395,7 +487,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 48,
@@ -403,7 +497,9 @@
     "last_name": "Palwal",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": "49",
@@ -411,7 +507,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 50,
@@ -419,7 +517,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 51,
@@ -427,7 +527,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 52,
@@ -435,7 +537,9 @@
     "last_name": "Uncle",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 53,
@@ -443,7 +547,9 @@
     "last_name": "Palwal",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 54,
@@ -451,7 +557,9 @@
     "last_name": "Ballabgarg",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 55,
@@ -460,7 +568,9 @@
     "phone_no": "8859299288",
     "address": "New Shiv. Mandir hajipur bulandshahar",
     "img": "55.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 56,
@@ -468,7 +578,9 @@
     "last_name": "Bhaiya",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 57,
@@ -476,7 +588,9 @@
     "last_name": "Lic",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 58,
@@ -484,7 +598,9 @@
     "last_name": "Ballabgarh",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 59,
@@ -493,7 +609,9 @@
     "phone_no": "8882121110",
     "address": "Rajiv colony, Ballabgarh ",
     "img": "59.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 60,
@@ -502,7 +620,9 @@
     "phone_no": "9811572573",
     "address": "C2-1202 SRS RESIDENCY sec 88, Faridabad",
     "img": "60.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 61,
@@ -510,7 +630,9 @@
     "last_name": "Sgm",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 62,
@@ -518,7 +640,9 @@
     "last_name": "Sgm",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 63,
@@ -526,7 +650,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 64,
@@ -534,7 +660,9 @@
     "last_name": "Bhaiya Goswami",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 65,
@@ -542,7 +670,9 @@
     "last_name": "Rajput",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 66,
@@ -551,7 +681,9 @@
     "phone_no": "8802478888",
     "address": "Rajiv colony sector 56",
     "img": "66.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 67,
@@ -559,7 +691,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 68,
@@ -567,7 +701,9 @@
     "last_name": "Atali",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 69,
@@ -575,7 +711,9 @@
     "last_name": "Delhi",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 70,
@@ -583,7 +721,9 @@
     "last_name": "Nit 3",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 71,
@@ -591,7 +731,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 72,
@@ -599,7 +741,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 73,
@@ -607,7 +751,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 74,
@@ -615,7 +761,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 75,
@@ -624,7 +772,9 @@
     "phone_no": "8882938337",
     "address": "Saraswati colony Sunny bazar, faridabad",
     "img": "75.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 76,
@@ -633,7 +783,9 @@
     "phone_no": "70606 00839",
     "address": "Shiv durga vihar, Lakkarpur, Faridabad ",
     "img": "76.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 77,
@@ -641,7 +793,9 @@
     "last_name": "Pandit",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 78,
@@ -649,7 +803,9 @@
     "last_name": "Chaurasia",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 79,
@@ -657,7 +813,9 @@
     "last_name": "Singh",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 80,
@@ -665,7 +823,9 @@
     "last_name": "Bhati",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 81,
@@ -673,7 +833,9 @@
     "last_name": "Delhi",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 82,
@@ -681,7 +843,9 @@
     "last_name": "",
     "phone_no": "8826198233",
     "address": "Delhi",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 83,
@@ -689,7 +853,9 @@
     "last_name": "Ram",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 84,
@@ -698,7 +864,9 @@
     "phone_no": "7827967454",
     "address": "Village Fatehpur chandila, Faridabad",
     "img": "84.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 85,
@@ -706,7 +874,9 @@
     "last_name": "Hr",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 86,
@@ -714,7 +884,9 @@
     "last_name": "Palwal",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 87,
@@ -722,7 +894,9 @@
     "last_name": "Mathura",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 88,
@@ -730,7 +904,9 @@
     "last_name": "Chaukan",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 89,
@@ -738,7 +914,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 90,
@@ -747,7 +925,9 @@
     "phone_no": "9999615095",
     "address": "Sector - 45, Faridabad ",
     "img": "90.png",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 91,
@@ -755,7 +935,9 @@
     "last_name": "",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 92,
@@ -763,7 +945,9 @@
     "last_name": "Meethapur",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 93,
@@ -771,7 +955,9 @@
     "last_name": "Sgm",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 94,
@@ -779,7 +965,9 @@
     "last_name": "Singh",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 95,
@@ -787,7 +975,9 @@
     "last_name": "Atali",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 96,
@@ -795,7 +985,9 @@
     "last_name": "Atali",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": 97,
@@ -803,7 +995,9 @@
     "last_name": "Lakkarpur",
     "phone_no": "",
     "address": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": "98",
@@ -812,7 +1006,9 @@
     "phone_no": "8882938337",
     "address": "Saraswati colony Sunny bazar, faridabad",
     "img": "98.jpg",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   },
   {
     "roll_no": "99",
@@ -821,6 +1017,8 @@
     "phone_no": "8826198233",
     "address": "Dayalbagh Delhi",
     "img": "",
-    "email": ""
+    "email": "",
+    "isAdmin": false,
+    "isSuperAdmin": false
   }
 ]

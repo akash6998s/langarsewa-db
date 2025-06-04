@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const filePath = path.join(__dirname, "../data/donations.json");
+const deletedLogPath = path.join(__dirname, "../data/deletedDonations.json");
 
 // Helper function to read data
 const readDonationsData = () => {
@@ -142,11 +143,67 @@ const getSingleMemberDonationSummary = (req, res) => { // Renamed for clarity
   res.json({ roll_no: roll_no, donations_summary: member.donations });
 };
 
+// --- Delete Entire Member Donation Data by Roll Number ---
+
+const deleteMemberByRollNo = (req, res) => {
+  const { rollNumber } = req.body;
+
+  if (!rollNumber) {
+    return res.status(400).json({ message: "rollNumber is required." });
+  }
+
+  let data = readDonationsData();
+  const memberIndex = data.findIndex(member => member.roll === String(rollNumber));
+
+  if (memberIndex === -1) {
+    return res.status(404).json({ message: `No member found with rollNumber ${rollNumber}` });
+  }
+
+  const member = data[memberIndex];
+
+  // Calculate total donation
+  let totalDonation = 0;
+  for (const year in member.donations) {
+    for (const month in member.donations[year]) {
+      totalDonation += member.donations[year][month];
+    }
+  }
+
+  // Save to deletedDonations.json
+  let deletedData = [];
+  try {
+    deletedData = JSON.parse(fs.readFileSync(deletedLogPath, "utf-8"));
+  } catch (e) {
+    deletedData = [];
+  }
+
+  deletedData.push({
+    roll: member.roll,
+    name: member.name,
+    last_name: member.last_name,
+    total_donation: totalDonation,
+    deleted_at: new Date().toISOString()
+  });
+
+  fs.writeFileSync(deletedLogPath, JSON.stringify(deletedData, null, 2));
+
+  // Remove the member
+  data.splice(memberIndex, 1);
+  writeDonationsData(data);
+
+  res.status(200).json({
+    message: `Member with rollNumber ${rollNumber} deleted successfully.`,
+    total_donated: totalDonation
+  });
+};
+
+
 
 module.exports = {
   getAllDonations,
-  addDonation, // Now adds to existing amount
-  deductDonation, // Now deducts from existing amount
-  getTotalDonations, // For all members
-  getSingleMemberDonationSummary, // For a single member (summary by year/month)
+  addDonation,
+  deductDonation,
+  getTotalDonations,
+  getSingleMemberDonationSummary,
+  deleteMemberByRollNo // 👈 add this
 };

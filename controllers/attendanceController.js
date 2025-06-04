@@ -137,10 +137,47 @@ const getSummary = (req, res) => {
   });
 };
 
+
+// ✅ Clear a member's name and attendance data by roll number (keep keys)
+const deleteMember = (req, res) => {
+  const { rollNumber } = req.body;
+
+  if (!rollNumber) {
+    return res.status(400).json({ message: 'Roll number is required' });
+  }
+
+  let data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  const index = data.findIndex(member => member.roll == rollNumber);
+
+  if (index === -1) {
+    return res.status(404).json({ message: 'No member found with rollNumber' });
+  }
+
+  const memberToUpdate = data[index];
+  const previousName = memberToUpdate.name;
+  const previousAttendance = memberToUpdate.attendance;
+
+  // Set name to an empty string and attendance to an empty object
+  memberToUpdate.name = "";
+  memberToUpdate.attendance = {};
+
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+  res.json({
+    message: `Name and attendance data for roll number ${rollNumber} cleared successfully`,
+    clearedDetails: {
+      roll: rollNumber,
+      previousName: previousName,
+      previousAttendance: previousAttendance
+    }
+  });
+};
+
+
 module.exports = {
   getAllAttendance,
   updateAttendance,
   deleteAttendance,
   getAttendanceByRoll,
-  getSummary
+  getSummary,
+  deleteMember // Export the modified function
 };
