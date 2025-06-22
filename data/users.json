@@ -1,20 +1,11 @@
 [
- {
+  {
     "rollNumber": "8",
     "email": "akash6998s@gmail.com",
     "password": "akash123",
     "status": "approved",
     "isAdmin": true,
     "isSuperAdmin": true
-  },
-
-  {
-    "rollNumber": "3",
-    "email": "v@gmail.com",
-    "password": "v123",
-    "status": "reject",
-    "isAdmin": false,
-    "isSuperAdmin": false
   },
   {
     "rollNumber": "7",

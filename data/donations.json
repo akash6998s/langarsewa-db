@@ -26,19 +26,6 @@
     }
   },
   {
-    "roll": "3",
-    "name": "Vikas",
-    "last_name": "Singh",
-    "donations": {
-      "2025": {
-        "march": 100,
-        "april": 100,
-        "may": 1100,
-        "june": 100
-      }
-    }
-  },
-  {
     "roll": "4",
     "name": "Jatin",
     "last_name": "",
