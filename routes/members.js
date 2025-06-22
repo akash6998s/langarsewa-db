@@ -20,3 +20,4 @@ router.post("/update", upload.single("img"), updateMemberFieldsPost);
 router.post("/delete-details", deleteMemberDetailsPost);
 
 module.exports = router;
+  

@@ -5,63 +5,78 @@ const router = express.Router();
 
 const usersFile = path.join(__dirname, "../data/users.json");
 
-// Ensure users.json exists
-if (!fs.existsSync(usersFile)) {
-  fs.writeFileSync(usersFile, "[]", "utf8");
+// Ensure the users.json file exists
+try {
+  if (!fs.existsSync(usersFile)) {
+    fs.writeFileSync(usersFile, "[]", "utf8");
+    console.log("users.json created.");
+  }
+} catch (error) {
+  console.error("Error ensuring users.json exists:", error);
 }
 
-// POST route for signup
+const readUsersFromFile = () => {
+  try {
+    const data = fs.readFileSync(usersFile, "utf8");
+    return JSON.parse(data);
+  } catch (error) {
+    console.error("Error reading users file:", error);
+    return [];
+  }
+};
+
+const writeUsersToFile = (users) => {
+  try {
+    fs.writeFileSync(usersFile, JSON.stringify(users, null, 2), "utf8");
+  } catch (error) {
+    console.error("Error writing users file:", error);
+  }
+};
+
+// POST /signup - Register a new user
 router.post("/", (req, res) => {
   const { rollNumber, email, password } = req.body;
 
-  // Convert rollNumber to a number and validate
+  if (!rollNumber || !email || !password) {
+    return res.status(400).json({ message: "All fields are required (roll number, email, password)." });
+  }
+
   const numericRollNumber = Number(rollNumber);
-  if (isNaN(numericRollNumber) || !email || !password) {
-    return res.status(400).json({ message: "All fields (including a valid roll number) are required." });
+  if (isNaN(numericRollNumber)) {
+    return res.status(400).json({ message: "Roll number must be a valid number." });
   }
 
-  const users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
+  const users = readUsersFromFile();
 
-  // Check if user exists with this roll number (comparing as numbers)
-  const rollNumberExists = users.find((user) => Number(user.rollNumber) === numericRollNumber);
+  const rollNumberExists = users.some((user) => Number(user.rollNumber) === numericRollNumber);
   if (rollNumberExists) {
-    return res
-      .status(409)
-      .json({ message: "User already exists with this roll number." });
+    return res.status(409).json({ message: "A user with this roll number already exists." });
   }
 
-  // Check if user exists with this email address
-  const emailExists = users.find((user) => user.email === email);
+  const emailExists = users.some((user) => user.email === email);
   if (emailExists) {
-    return res
-      .status(409)
-      .json({ message: "User already exists with this email address." });
+    return res.status(409).json({ message: "A user with this email address already exists." });
   }
 
-  // Create new user with numeric rollNumber
   const newUser = { rollNumber: numericRollNumber, email, password, status: "pending" };
   users.push(newUser);
 
-  fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
+  writeUsersToFile(users);
   res.status(201).json({
-    message: "Request sent. Please wait until the admin approves your account",
+    message: "Signup request sent successfully. Please wait for admin approval.",
   });
 });
 
-
-// POST route for login
+// POST /signup/login - Authenticate a user
 router.post("/login", (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return res
-      .status(400)
-      .json({ message: "Email and password are required." });
+    return res.status(400).json({ message: "Email and password are required for login." });
   }
 
-  const users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
+  const users = readUsersFromFile();
 
-  // Find user by email and password
   const user = users.find((u) => u.email === email && u.password === password);
 
   if (!user) {
@@ -70,38 +85,39 @@ router.post("/login", (req, res) => {
 
   if (user.status !== "approved") {
     return res.status(403).json({
-      message: `Access denied. Your account status is '${user.status}'.`,
+      message: `Access denied. Your account status is '${user.status}'. Please contact the admin.`,
     });
   }
 
   res.status(200).json({
     message: "Login successful.",
-    rollNumber: user.rollNumber // rollNumber will be returned as stored (now numeric)
+    rollNumber: user.rollNumber,
+    email: user.email,
+    isAdmin: user.isAdmin,
+    isSuperAdmin: user.isSuperAdmin
   });
 });
 
-
-// POST route to update user status
+// POST /signup/update-status - Update a user's approval status (Admin function)
 router.post("/update-status", (req, res) => {
   const { rollNumber, status } = req.body;
 
-  // Convert rollNumber to a number and validate
-  const numericRollNumber = Number(rollNumber);
-  if (isNaN(numericRollNumber) || !status) {
-    return res
-      .status(400)
-      .json({ message: "rollNumber (as a valid number) and status are required." });
+  if (!rollNumber || !status) {
+    return res.status(400).json({ message: "Roll number and status are required to update user status." });
   }
 
-  let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
+  const numericRollNumber = Number(rollNumber);
+  if (isNaN(numericRollNumber)) {
+    return res.status(400).json({ message: "Roll number must be a valid number." });
+  }
 
-  // Find user index by numeric rollNumber
+  let users = readUsersFromFile();
+
   const userIndex = users.findIndex((user) => Number(user.rollNumber) === numericRollNumber);
   if (userIndex === -1) {
-    return res.status(404).json({ message: "User not found." });
+    return res.status(404).json({ message: "User not found with the provided roll number." });
   }
 
-  // Normalize status for update: only 'approved' or 'reject' are accepted, else 'pending'
   let normalizedStatus;
   if (status.toLowerCase() === "approved") {
     normalizedStatus = "approved";
@@ -113,46 +129,72 @@ router.post("/update-status", (req, res) => {
 
   users[userIndex].status = normalizedStatus;
 
-  fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
-  res
-    .status(200)
-    .json({ message: `User status updated to ${normalizedStatus}.` });
+  writeUsersToFile(users);
+  res.status(200).json({
+    message: `User status for roll number ${numericRollNumber} updated to '${normalizedStatus}'.`,
+  });
 });
 
-// DELETE route to delete a user by rollNumber
+// POST /signup/delete-user - Delete a user by roll number (Admin function)
 router.post("/delete-user", (req, res) => {
-  const { rollNumber } = req.body; // Expect rollNumber in the request body
+  const { rollNumber } = req.body;
 
-  // Convert rollNumber to a number and validate
-  const numericRollNumber = Number(rollNumber);
-  if (isNaN(numericRollNumber)) {
-    return res.status(400).json({ message: "A valid rollNumber (as a number) is required." });
+  if (!rollNumber) {
+    return res.status(400).json({ message: "Roll number is required to delete a user." });
   }
 
-  let users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
+  const numericRollNumber = Number(rollNumber);
+  if (isNaN(numericRollNumber)) {
+    return res.status(400).json({ message: "Roll number must be a valid number." });
+  }
 
+  let users = readUsersFromFile();
   const initialLength = users.length;
-  // Filter out the user with the matching numeric rollNumber
+
   users = users.filter((user) => Number(user.rollNumber) !== numericRollNumber);
 
   if (users.length === initialLength) {
-    // If the length hasn't changed, no user was found and deleted
-    return res.status(404).json({ message: "No member found with rollNumber." });
+    return res.status(404).json({ message: `No user found with roll number ${numericRollNumber}.` });
   }
 
-  fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
-  res.status(200).json({ message: `User with roll number ${numericRollNumber} deleted successfully.` });
+  writeUsersToFile(users);
+  res.status(200).json({
+    message: `User with roll number ${numericRollNumber} deleted successfully.`,
+  });
 });
 
+// POST /signup/update-admin - Update a user's admin status (Admin function)
+router.post("/update-admin", (req, res) => {
+  const { rollNumber, admin } = req.body;
 
-// GET route to fetch all users
-router.get("/", (req, res) => {
-  try {
-    const users = JSON.parse(fs.readFileSync(usersFile, "utf8"));
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(500).json({ message: "Error reading users file." });
+  if (typeof rollNumber === "undefined" || typeof admin === "undefined") {
+    return res.status(400).json({ message: "Roll number and admin status are required." });
   }
+
+  const numericRollNumber = Number(rollNumber);
+  if (isNaN(numericRollNumber)) {
+    return res.status(400).json({ message: "Roll number must be a valid number." });
+  }
+
+  const users = readUsersFromFile();
+
+  const userIndex = users.findIndex((user) => Number(user.rollNumber) === numericRollNumber);
+  if (userIndex === -1) {
+    return res.status(404).json({ message: "User not found with the provided roll number." });
+  }
+
+  users[userIndex].isAdmin = Boolean(admin);
+
+  writeUsersToFile(users);
+  res.status(200).json({
+    message: `Admin status for roll number ${numericRollNumber} updated to '${admin}'.`,
+  });
+});
+
+// GET /signup - Fetch all users (Admin function)
+router.get("/", (req, res) => {
+  const users = readUsersFromFile();
+  res.status(200).json(users);
 });
 
 module.exports = router;

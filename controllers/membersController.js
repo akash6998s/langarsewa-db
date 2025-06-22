@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+
 const filePath = path.join(__dirname, "../data/members.json");
 const imageFolder = path.join(__dirname, "../images");
 
@@ -25,17 +26,19 @@ const updateMemberFieldsPost = (req, res) => {
   const members = JSON.parse(fs.readFileSync(filePath, "utf-8"));
   const index = members.findIndex((m) => m.roll_no === rollNum);
 
-  // Delete existing image file for this roll number (any extension)
-  const existingFiles = fs.readdirSync(imageFolder);
-  existingFiles.forEach((file) => {
-    if (file.startsWith(`${rollNum}.`)) {
-      fs.unlinkSync(path.join(imageFolder, file));
-    }
-  });
-
-  // Save uploaded image if available
   let imageName = "";
+
+  // If a new image is uploaded, delete old one and save new
   if (req.file) {
+    // Delete existing image for this roll number
+    const existingFiles = fs.readdirSync(imageFolder);
+    existingFiles.forEach((file) => {
+      if (file.startsWith(`${rollNum}.`)) {
+        fs.unlinkSync(path.join(imageFolder, file));
+      }
+    });
+
+    // Save uploaded image
     const ext = path.extname(req.file.originalname);
     imageName = `${rollNum}${ext}`;
     const destPath = path.join(imageFolder, imageName);
@@ -43,11 +46,12 @@ const updateMemberFieldsPost = (req, res) => {
   }
 
   if (index !== -1) {
-    // Update existing member — always update with the received values
+    // Update existing member
     members[index].name = name;
     members[index].last_name = last_name;
     members[index].phone_no = phone_no;
     members[index].address = address;
+
     if (req.file) {
       members[index].img = imageName;
     }
@@ -76,7 +80,6 @@ const updateMemberFieldsPost = (req, res) => {
     return res.status(201).json({ message: "New member added", newMember });
   }
 };
-
 
 const deleteMemberDetailsPost = (req, res) => {
   const { rollNumber } = req.body;
